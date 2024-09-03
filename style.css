@@ -23,7 +23,7 @@ nav{
     font-size: larger;
     overflow: hidden;
     padding: 10px;
-    positon: fixed;
+    position: fixed;
     z-index: 1000;
 }
 
@@ -74,7 +74,7 @@ li a:hover{
     display: none;
 }
 
-@media screen and(max-width:9520x) {
+@media screen and(max-width:952x) {
     .nav_head{
         font-size: 30px;
     }
@@ -85,44 +85,68 @@ li a:hover{
         margin-left: 20px;
     }
 }
-@media screen and(max-width:820px){
-    .checkbtn{
+@media screen and (max-width: 952px) {
+    .nav_head {
+        font-size: 30px;
+    }
+    nav li a {
+        font-size: 18px;
+    }
+    nav .contact_btn {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .checkbtn {
         display: block;
         margin-left: 150px;
     }
-    .nav_head{
+    .nav_head {
         padding-left: 10px;
     }
-    nav.ul{
+    nav ul {
         z-index: 1000;
         position: fixed;
         width: 60%;
         height: 50vh;
         background-color: black;
-        top: 50px; right: -100%;
+        top: 50px;
+        right: -100%;
         padding: 20px;
-        transition: all .5s;
+        transition: all 0.5s;
     }
-    nav li{
+    nav li {
         text-align: center;
         display: block;
         float: left;
-        width: 330px;
-        height: 60px;
-        padding: 5px;
+        width: 100%;
+        padding: 10px;
     }
-    nav .contact_btn{
-        width: 90%;
-        margin-top: 15px;
+    .home {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
     }
-    nav li a{
-        font-size: 20px;
-        color: white;
+    .description {
+        padding: 10px;
+        text-align: center;
     }
-    .checkbox:checked ~ ul{
-        right: 0;
+    .description h1 {
+        font-size: 25px;
+    }
+    .description h1 span {
+        font-size: 40px;
+    }
+    .description h2 {
+        font-size: 25px;
+    }
+    .about {
+        flex-direction: column;
+        padding: 20px;
     }
 }
+
 
 /* home section */
 .home{
@@ -192,7 +216,7 @@ li a:hover{
     box-shadow: 0px 0px 15px #ED2279;
 }
 .description button{
-    paddin: 13px 20px;
+    padding: 13px 20px;
     font-size: 20px;
     border-radius: 10px;
     background: linear-gradient(145deg,#ED2279,rgb(231, 201,35));
@@ -226,7 +250,7 @@ li a:hover{
 
 
 
-@media screen adn (max-width:820px){
+@media screen and (max-width:820px){
     .home img{
         margin-top: -7rem;
         margin-left: -1rem;
@@ -271,6 +295,7 @@ li a:hover{
     border-radius: 50%;
     box-shadow: 0px 0px 30px #ED2279;
     filter: brightness(1.1);
+    animation: animate1 2.5s ease-in-out forwards infinite;
 }
 @keyframes animate1 {
     0%{
@@ -287,10 +312,10 @@ li a:hover{
     margin-bottom: 30px;
 }
 .about_section h1{
-    margin-size: 50px;
+    font-size: 50px;
 }
-.about_section h2{
-    margin.top: 10px;
+.about_section h2{ 
+    margin-top: 10px;
 }
 .about_section span{
     color: #ED2279;
@@ -393,5 +418,70 @@ div.card{
     }
     .service_card h2{
         font-size: 25px;
+    }
+}
+
+
+/* portofolio section */
+
+h1.port_section{
+    margin-top: 200px;
+    text-align: center;
+    color: white;
+    font-size: 45px;
+    padding-top: 80px;
+}
+h1.port_span{
+    color: #ED2279;
+}
+div.project{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 60px;
+}
+.port_card img{
+    transition: .4s ease-in-out;
+}
+.port_card img:hover{
+    transform: translateY(-20px) scale(1.1);
+}
+.port_card{
+    object-fit: cover;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.port_card .content{
+    border-image: fill 0 linear-gradient(#0001,#ED2279);
+    position: relative;
+    bottom: 185px;
+    height: 200px;
+    text-align: center;
+    color: white;
+    padding-top: 50px;
+}
+
+.content h1{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.content p{
+    width: 350px;
+}
+
+/* responsive portofolio section */
+
+@media screen and (max-width:820px) {
+    h1.port_section{
+        font-size: 35px;
+    }
+    .project{
+        grid-template-columns: 1fr;
+        margin-bottom: 200px;
+        flex-wrap: wrap;
+    }
+    .port_card{
+        margin-bottom: -170px;
     }
 }
